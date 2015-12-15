@@ -1,0 +1,33 @@
+<%= form_for(@personalclass) do |f| %>
+  <% if @personalclass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@personalclass.errors.count, "error") %> prohibited this personalclass from being saved:</h2>
+
+      <ul>
+      <% @personalclass.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tutor_name %><br>
+    <%= f.text_field :tutor_name %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.time_select :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

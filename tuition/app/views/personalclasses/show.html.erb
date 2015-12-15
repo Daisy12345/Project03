@@ -1,0 +1,23 @@
+
+<p>
+  <strong>Tutor name:</strong>
+  <%= @personalclass.tutor_name %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @personalclass.subject %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @personalclass.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @personalclass.time %>
+</p>
+
+<%= link_to 'Edit', edit_personalclass_path(@personalclass) %> |
+<%= link_to 'Back', personalclasses_path %>
