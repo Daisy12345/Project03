@@ -1,6 +1,5 @@
 
-
-<h1>Listing Personalclasses</h1>
+<h1>Personal Classes</h1>
 
 <table>
   <thead>
@@ -24,17 +23,22 @@
         <td><%= personalclass.user_id %></td>
         
         <% if personalclass.booked == false %>
-        <td><%= link_to('Book', personalclass_path(personalclass, 'personalclass[booked]' => true), method: :put, data: { confirm: 'Book this lesson?' }) %></td>
+        <td><%= link_to('Book', personalclass_path(personalclass, 'personalclass[booked]' => true), method: :put, data: { confirm: 'Booking this class?' }) %></td>
         <% end %>
 
         <td><%= link_to 'Show', personalclass %></td>
-        <td><%= link_to 'Edit', edit_personalclass_path(personalclass) %></td> 
-        <td><%= link_to 'Destroy', personalclass, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+
+        <% if admin_signed_in? %>
+        <td><%= link_to 'Edit', edit_personalclass_path(personalclass) %></td>
+
+        <td><%= link_to 'Destroy', personalclass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Personalclass', new_personalclass_path %>
+<% if admin_signed_in? %>
+  <%= link_to 'New Personal Class', new_personalclass_path %>
+<% end %>

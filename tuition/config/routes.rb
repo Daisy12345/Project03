@@ -1,15 +1,13 @@
 Rails.application.routes.draw do 
+  devise_for :admins
   devise_for :users
 
   # get '/users/current' => 'users#current', as: :current_user
 
+  resources :personalclasses
   resources :users
   root 'users#home'
 
-  resources :personalclasses
-
-
-  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
