@@ -1,0 +1,16 @@
+<h3>Users of <%= @workshop.name %></h3>
+<table>
+	<thead>
+		<tr>
+			<th>Users</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @users.each do |user| %>
+		<tr>
+			<td><%= @users.find(workshop.user_id).first_name %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+<%= link_to 'Back', workshop_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215085214) do
+ActiveRecord::Schema.define(version: 20151217005754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,9 +41,11 @@ ActiveRecord::Schema.define(version: 20151215085214) do
     t.time     "time"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.integer  "user_id"
     t.boolean  "booked",     default: false
+    t.integer  "user_id"
   end
+
+  add_index "personalclasses", ["user_id"], name: "index_personalclasses_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -67,4 +69,20 @@ ActiveRecord::Schema.define(version: 20151215085214) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "workshops", force: :cascade do |t|
+    t.string   "name"
+    t.string   "duration"
+    t.datetime "date"
+    t.string   "price"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "total_seats"
+    t.integer  "available_seats"
+  end
+
+  add_index "workshops", ["user_id"], name: "index_workshops_on_user_id", using: :btree
+
+  add_foreign_key "personalclasses", "users"
+  add_foreign_key "workshops", "users"
 end

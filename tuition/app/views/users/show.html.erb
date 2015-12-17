@@ -1,4 +1,4 @@
-
+<%= link_to 'Private classes', personalclasses_path %> <%= link_to 'Students', users_path %> <%= link_to 'Workshops', workshops_path %>
 <p>
   <strong>First name:</strong>
   <%= @user.first_name %>
@@ -16,7 +16,7 @@
 
 <p>
   <strong>Email:</strong>
-  <%= @user.e_mail %>
+  <%= @user.email %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

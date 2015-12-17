@@ -1,0 +1,39 @@
+<%= link_to 'Private classes', personalclasses_path %> <%= link_to 'Students', users_path %> <%= link_to 'Workshops', workshops_path %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @workshop.name %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @workshop.duration %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @workshop.date %>
+</p>
+
+<p>
+  <strong>Total seats:</strong>
+  <%= @workshop.total_seats %>
+</p>
+
+<p>
+  <strong>Available seats:</strong>
+  <%= @workshop.available_seats %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @workshop.price %>
+</p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @workshop.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_workshop_path(@workshop) %> |
+<%= link_to 'Back', workshops_path %>

@@ -1,0 +1,52 @@
+<%= link_to 'Private classes', personalclasses_path %> <%= link_to 'Students', users_path %> <%= link_to 'Workshops', workshops_path %>
+
+<h1>Workshops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Duration</th>
+      <th>Date</th>
+      <th>Total Seats</th>
+      <th>Available Seats</th>
+      <th>Price</th>
+      <th>Users</th>
+ 
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workshops.each do |workshop| %>
+      <tr>
+        <td><%= workshop.name %></td>
+        <td><%= workshop.duration %></td>
+        <td><%= workshop.date %></td>
+        <td><%= workshop.total_seats %></td>  
+        <td><%= workshop.available_seats %></td>
+        <td><%= workshop.price %></td>
+        <td><%= workshop.user_id %></td>
+   
+        <% if user_signed_in? %>
+        <% if workshop.available_seats > 0 %>
+        <td><%= link_to('Book', workshop_path(workshop, 'workshop[available_seats]' => workshop.available_seats-1, 'workshop[user_id]' => @user.id), method: :put, data: { confirm: 'Booking workshop?' }) %></td>
+        <% end %>
+        <% end %>
+
+        <td><%= link_to 'Show', workshop %></td>
+
+        <% if admin_signed_in? %>
+        <td><%= link_to 'Edit', edit_workshop_path(workshop) %></td>
+        <td><%= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if admin_signed_in? %>
+<%= link_to 'New Workshop', new_workshop_path %>
+<% end %>

@@ -1,10 +1,13 @@
 class PersonalclassesController < ApplicationController
+  # before_action :authenticate_admin_or_user!
   before_action :set_personalclass, only: [:show, :edit, :update, :destroy]
 
   # GET /personalclasses
   # GET /personalclasses.json
   def index
+    @users = User.all
     @personalclasses = Personalclass.all
+    @user = current_user
   end
 
   # GET /personalclasses/1
@@ -78,6 +81,6 @@ class PersonalclassesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def personalclass_params
-      params.require(:personalclass).permit(:tutor_name, :subject, :date, :time, :user_id, :booked)
+      params.require(:personalclass).permit(:tutor_name, :subject, :date, :time, :booked)
     end
 end

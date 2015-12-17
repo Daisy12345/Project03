@@ -9,3 +9,11 @@ Admin
 1. Admin can see all the users
 2. 
 
+Greg's do-list:
+->Add a welcome controller
+->changes in router '/'
+->move before_action:authendicate User!
+
+
+Issues:
+Admin authentication

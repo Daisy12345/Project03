@@ -1,6 +1,8 @@
 <%= link_to 'Private classes', personalclasses_path %> <%= link_to 'Students', users_path %> <%= link_to 'Workshops', workshops_path %>
-<h1>New Personal Class</h1>
+
+<h1>Editing Workshop</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', personalclasses_path %>
+<%= link_to 'Show', @workshop %> |
+<%= link_to 'Back', workshops_path %>
