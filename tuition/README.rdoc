@@ -2,27 +2,45 @@
 
 # Description
 --------------
+Bookeo is an online booking solution that is ideal for scheduling bookings. 
 
+Bookeo manages confirmations, cancellations, reminders, date changes, and more.
 
-
-
+# Pages
+------------
+Sign up
+	Login details
+	personal detail
 
 User
-
 1. current user able to edit his details only
-2. once user logged into inside immediately ask to fill the other details of them to fill
-
+2. once user logged into inside immediately, they can edit their details.
+3. User can make a booking on both private classes and workshops.
 
 Admin
-
 1. Admin can see all the users
-2. 
+2. Create a private class
+3. Create a workshops
 
-Greg's do-list:
-->Add a welcome controller
-->changes in router '/'
-->move before_action:authendicate User!
+# Tech Used
+--------------
+Ruby on Rails
+Postgresql
+Backbone
+jQuery
+Bootstrap
+
+# Approach
+------------
+A Rails backend was used to create a rails app for managing booking system and used to create realtime users authentication in a way it works.
 
 
-Issues:
-Admin authentication
+# Further Work
+----------------
+ * Confirmation email sent to the user when make a booking 
+ * For realtime can use the payment API
+ * Track the status of the users in the syatem, and send weekly updates
+ * Add different type of classes like group classes to different type of users
+
+
+
