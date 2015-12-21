@@ -8,43 +8,35 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 </head>
 <body>
 
-<div class="container-fluid">
-    
+<div class="container-fluid">    
 <!-- Carousel container -->
 <div id="my-pics" class="carousel slide" data-ride="carousel">
-
 <!-- Indicators -->
 <ol class="carousel-indicators">
 <li data-target="#my-pics" data-slide-to="0" class="active"></li>
 <li data-target="#my-pics" data-slide-to="1"></li>
 <li data-target="#my-pics" data-slide-to="2"></li>
 </ol>
-
 <!-- Content -->
 <div class="carousel-inner" role="listbox">
-
 <!-- Slide 1 -->
 <div class="item active">
 <img src="/assets/444.jpg">
 <!-- <img src="/assets/111.jpg"> -->
 </div>
-
 <!-- Slide 2 -->
 <div class="item">
 <img src="/assets/tuition2.jpg">
 </div>
-
 <!-- Slide 3 -->
 <div class="item">
 <img src="/assets/tuition3.png" >
 </div>
-
 </div>
 
 <!-- Previous/Next controls -->
@@ -57,7 +49,6 @@
 <span class="sr-only">Next</span>
 </a>
 </div>
-
 </div>
 
 <%= render :partial => 'layouts/header' %>
@@ -66,11 +57,10 @@
 	 <% if notice %>
 	 <p class="alert alert-success"><%= notice %></p>
 	 <% end %>
-
      <% if alert %>
 	 <p class="alert alert-danger"><%= alert %></p>
 	 <% end %>
-	<!-- </div> -->
+<!-- </div> -->
 
 	<p class="navbar-text pull-right">
 	<% if user_signed_in? %>
@@ -88,10 +78,11 @@
 	<% end %>
 
 	
-	<div class="container">
+	<main>
 	<%= yield %>
-	</div>
-<%= render :partial => 'layouts/footer' %>
+	</main>
+  <%= render :partial => 'layouts/footer' %>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

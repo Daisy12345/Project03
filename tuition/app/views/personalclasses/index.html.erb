@@ -1,5 +1,15 @@
-<%= link_to 'Private classes', personalclasses_path %> <%= link_to 'Students', users_path %>
-<%= link_to 'Workshops', workshops_path %>
+<section class="content-wrapper">
+<aside class="sidebar">
+  <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
+        <li class="highlight"><h4>Classes</h4></li>
+        <li><%= link_to "Private classes", personalclasses_path %></li>
+        <li><%= link_to 'Students', users_path %></li>
+        <li><%= link_to "workshops", workshops_path %></li>
+      </ul>
+<aside class="sidebar">
+</section>
+
+<section class="content-wrapper1">
 <h1>Personal Classes</h1>
 
 <table>
@@ -23,9 +33,10 @@
         <td><%= personalclass.subject %></td>
         <td><%= personalclass.date %></td>
         <td><%= personalclass.time %></td>
-        <td><%= personalclass.booked %></td> 
+        <td><%= personalclass.booked %></td>
         <td><%= personalclass.user_id %></td>
        
+
         <% if user_signed_in? %>
         <% if personalclass.booked == false %>
         <td><%= link_to('Book', personalclass_path(personalclass, 'personalclass[booked]' => true, 'personalclass[user_id]' => @user.id), method: :put, data: { confirm: 'Booking this class?' }) %></td>
@@ -48,3 +59,4 @@
 <% if admin_signed_in? %>
   <%= link_to 'New Personal Class', new_personalclass_path %>
 <% end %>
+</section>

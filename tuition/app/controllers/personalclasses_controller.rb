@@ -1,5 +1,4 @@
 class PersonalclassesController < ApplicationController
-  # before_action :authenticate_admin_or_user!
   before_action :set_personalclass, only: [:show, :edit, :update, :destroy]
 
   # GET /personalclasses

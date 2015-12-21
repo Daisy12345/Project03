@@ -1,4 +1,13 @@
-<%= link_to 'Private classes', personalclasses_path %> <%= link_to 'Students', users_path %> <%= link_to 'Workshops', workshops_path %>
+<section class="content-wrapper">
+<aside class="sidebar">
+  <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
+        <li class="highlight"><h4>Classes</h4></li>
+        <li><%= link_to "Private classes", personalclasses_path %></li>
+        <li><%= link_to 'Students', users_path %></li>
+        <li><%= link_to "workshops", workshops_path %></li>
+      </ul>
+<aside class="sidebar">
+</section>
 
 <h1>Workshops</h1>
 
