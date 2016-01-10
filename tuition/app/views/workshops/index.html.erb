@@ -9,8 +9,8 @@
 <aside class="sidebar">
 </section>
 
+<div class="table-box">
 <h1>Workshops</h1>
-
 <table>
   <thead>
     <tr>
@@ -20,8 +20,7 @@
       <th>Total Seats</th>
       <th>Available Seats</th>
       <th>Price</th>
-      <th>Users</th>
- 
+      <th>Booked Users</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -35,11 +34,12 @@
         <td><%= workshop.total_seats %></td>  
         <td><%= workshop.available_seats %></td>
         <td><%= workshop.price %></td>
-        <td><%= workshop.user_id %></td>
+        <td><%= workshop.count %></td>
+
    
         <% if user_signed_in? %>
         <% if workshop.available_seats > 0 %>
-        <td><%= link_to('Book', workshop_path(workshop, 'workshop[available_seats]' => workshop.available_seats-1, 'workshop[user_id]' => @user.id), method: :put, data: { confirm: 'Booking workshop?' }) %></td>
+        <td><%= link_to('Book', workshop_path(workshop, 'workshop[available_seats]' => workshop.available_seats-1, 'workshop[user_id]' => @user.id, 'workshop[count]' => workshop.count+1), method: :put, data: { confirm: 'Booking workshop?' }) %></td>
         <% end %>
         <% end %>
 
@@ -59,3 +59,4 @@
 <% if admin_signed_in? %>
 <%= link_to 'New Workshop', new_workshop_path %>
 <% end %>
+</div>

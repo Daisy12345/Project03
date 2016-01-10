@@ -8,8 +8,8 @@
       </ul>
 <aside class="sidebar">
 </section>
-
-<section class="content-wrapper1">
+<!-- 
+<section class="content-wrapper1"> -->
 <h1>Personal Classes</h1>
 
 <table>
@@ -20,7 +20,7 @@
       <th>Date</th>
       <th>Time</th>
       <th>Booking Status</th>
-      <th>User name</th>
+<!--       <th>User name</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,9 +34,7 @@
         <td><%= personalclass.date %></td>
         <td><%= personalclass.time %></td>
         <td><%= personalclass.booked %></td>
-        <td><%= personalclass.user_id %></td>
-       
-
+      
         <% if user_signed_in? %>
         <% if personalclass.booked == false %>
         <td><%= link_to('Book', personalclass_path(personalclass, 'personalclass[booked]' => true, 'personalclass[user_id]' => @user.id), method: :put, data: { confirm: 'Booking this class?' }) %></td>
@@ -59,4 +57,5 @@
 <% if admin_signed_in? %>
   <%= link_to 'New Personal Class', new_personalclass_path %>
 <% end %>
-</section>
+<!-- </section> -->
+

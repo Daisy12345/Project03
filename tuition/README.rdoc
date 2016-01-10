@@ -1,4 +1,5 @@
 # Bookeo - Online booking system for Tuition centre
+----------------------------------------------------
 
 # Description
 --------------
