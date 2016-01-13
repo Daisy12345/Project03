@@ -1,5 +1,17 @@
-<%= link_to 'Private classes', personalclasses_path %> <%= link_to 'Students', users_path %> <%= link_to 'Workshops', workshops_path %>
+<section class="content-wrapper">
+<aside class="md-col md-col-3">
+  <div class="side-bar">
+  <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
+        <li class="highlight"><h4>Classes</h4></li>
+        <li><%= link_to "Private classes", personalclasses_path %></li>
+        <li><%= link_to 'Students', users_path %></li>
+        <li><%= link_to "workshops", workshops_path %></li>
+  </ul>
+  </div>
+</aside>
 
+<div class="sidebar md-col md-col-9">
+<div class="table-box">
 <p>
   <strong>Name:</strong>
   <%= @workshop.name %>
@@ -37,3 +49,6 @@
 
 <%= link_to 'Edit', edit_workshop_path(@workshop) %> |
 <%= link_to 'Back', workshops_path %>
+</div>
+</div>
+</section>

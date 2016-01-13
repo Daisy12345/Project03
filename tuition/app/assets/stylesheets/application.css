@@ -23,9 +23,9 @@
 body {
 	margin: 20px;
 	background-color: pink;
-  	color: #333;
-  	font-family: verdana, arial, helvetica, sans-serif;
-  	font-size: 13px;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
 }
 
 header {
@@ -45,10 +45,15 @@ header p {
     min-height: 90px;
 }
 
-img{
+.ddd{
     margin: 0 auto;
     height:300px;
     width:300px;
+}
+
+img{
+  height: 50px;
+  width:  50px;
 }
 
 .carousel-inner {
@@ -63,12 +68,14 @@ table {
 	width: 100%;
 }
 
-th {
-   padding: 1em 1em 1em 1em; 
+thead th {
+   padding: 0.4em;
+   text-align: left;
 }
 
-td {
-	padding: 1em 1em 1em 1em;
+tbody td {
+	padding: 0.4em;
+  text-align: left;
 }
 
 main {
@@ -90,15 +97,23 @@ main {
 	padding-left: 5px;
 }
 
-/*.content-wrapper1 {
-    display: flex-end;
-   	flex: 3 0 0;
-}*/
-
 .sidebar {
   width: 100px;
   border-right: 5px solid black;
 }
+
+.side-bar {
+  width: 150px;
+  height: 150px;
+}
+
+/****************/
+
+.md-col{float:left;box-sizing:border-box}
+.md-col-9{width:75%}
+.md-col-3{width:25%}
+
+/****************/
 
 .nav.nav-pills.nav-stacked.labels-info p {
     color: #9d9f9e;
@@ -115,14 +130,11 @@ main {
 }
 
 footer {
-  margin: 0px;
+  margin-top: 100px;
   background-color: #000;
-  color: #fff;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
-  height: 40px;
+  height: 60px;
 }
 
 footer p{
@@ -133,3 +145,5 @@ a:link {
 	color: blue;
 	text-decoration: underline;
 }
+
+
